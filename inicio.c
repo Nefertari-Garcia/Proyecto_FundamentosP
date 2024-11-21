@@ -4,12 +4,9 @@
 
 int main()
 {
-    void inicio(){
-
-    }
-
-    
 
 
     return 0;
+
 }
+
