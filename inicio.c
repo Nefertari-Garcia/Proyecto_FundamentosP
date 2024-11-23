@@ -1,5 +1,4 @@
 <<<<<<< Updated upstream
-#include<stdio.h>
 #include <string.h>
 =======
 #include <stdio.h>
@@ -21,10 +20,8 @@ struct cliente
     float saldo;
 };
 
-
-void Data_Account(int *num_tel, int *contra) 
+int main()
 {
-<<<<<<< Updated upstream
         printf("\nBuen dia, este es un sistema bancario, porfavor seleccione la accion que quisiera hacer: \n");
         opcion(); 
         return 0;
@@ -40,10 +37,22 @@ void opcion(){
         case 1:
             registro();
             break;
+
+
         
         default:
             printf("Ninguna de las opciones son validas\n");
         }
+}
+
+
+
+void Data_Account(int *num_tel, int *contra) 
+{
+<<<<<<< Updated upstream
+        printf("\nBuen dia, este es un sistema bancario, porfavor seleccione la accion que quisiera hacer: \n");
+        opcion(); 
+        return 0;
 }
 
 
@@ -137,7 +146,7 @@ void Val_Account(int num_tel, int contra, int V_Tel, int V_contra )
     
 }
 
-int main() {
+int depoDin() {
     int salir = 0;
     int num_tel, contra;
     int V_tel, V_contra;
