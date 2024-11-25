@@ -10,7 +10,7 @@
 
 void opcion();
 void registro();
-void o();
+void DepoDinero();
 void Radomizer();
 
 int Suma_cliente = 0;
@@ -44,7 +44,7 @@ void opcion()
             registro();
             break;
         case 2:
-            // Implementar lógica para depositar dinero
+            DepoDinero();
             break;
         case 3:
             // Implementar lógica para verificar saldo
@@ -118,9 +118,9 @@ void registro()
     
 
 
-void opExitosa() 
+void DepoDinero();
 {
-    // Implementar lógica para opción exitosa
+    printf("D%cgite su Numero de Tarjeta",161);
 }
 
 void Radomizer()
