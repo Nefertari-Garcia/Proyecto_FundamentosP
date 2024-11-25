@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include <time.h>
 
 
 #define MAX_NOMBRE 50
@@ -9,14 +10,15 @@
 
 void opcion();
 void registro();
-void opExitosa();
+void o();
+void Radomizer();
 
 int Suma_cliente = 0;
 char nombre[MAX_CLIENTES][MAX_NOMBRE];
 char apellidos[MAX_CLIENTES][MAX_NOMBRE];
 int numeroCelular;
-int numeroTarjeta;
-char contrasenaNIP[4];
+int numeroTarjeta [16];
+int contrasenaNIP[4];
 float saldo;
 
 
@@ -71,36 +73,39 @@ void opcion()
 void registro() 
 {
     system("cls");
-    if (Suma_cliente <= MAX_CLIENTES) {
+    if (Suma_cliente <= MAX_CLIENTES) 
+    {
 
         int c;
         while ((c = getchar()) != '\n' && c != EOF);
-        
+
         printf("Introduce el Nombre/s del Cliente: ");
         fgets(nombre[Suma_cliente], MAX_NOMBRE, stdin);
         nombre[Suma_cliente][strcspn(nombre[Suma_cliente], "\n")] = 0; 
 
-        printf("Introduce los Apellidos del Cliente: ");
+        printf("\nIntroduce los Apellidos del Cliente: ");
         fgets(apellidos[Suma_cliente], MAX_NOMBRE, stdin);
         apellidos[Suma_cliente][strcspn(apellidos[Suma_cliente], "\n")] = 0; 
 
-        printf("Introduce el Número de Celular: ");
+        printf("\nIntroduce el N%cmero de Celular: ",163);
         scanf("%d", &numeroCelular);
         getchar(); 
 
-        printf("Introduce el Número de Tarjeta: ");
-        scanf("%d", &numeroTarjeta);
+        printf("\nGenerando el n%cmero de Tarjeta: ",163);
+        Radomizer();
+        printf("\n\033[1;31mGuardar este Numero ya que es el numero de tu tarjeta (Enter para continuar)\033[0m\n");
+        getchar();
+        
+        printf("Introduce la Contrase%ca NIP (4 d%cgitos): ",164,161);
+        scanf("%4d", contrasenaNIP);
         getchar(); 
 
-        printf("Introduce la Contraseña NIP (4 dígitos): ");
-        scanf("%4s", contrasenaNIP);
-        getchar(); 
-        printf("Introduce el Saldo inicial: ");
+        printf("\nIntroduce el Saldo inicial: ");
         scanf("%f", &saldo);
         getchar(); 
 
         Suma_cliente++;
-        printf("Registro exitoso.\n");
+        printf("\n\nRegistro exitoso.\n");
         getch();
         opcion();
     } else {
@@ -113,6 +118,22 @@ void registro()
     
 
 
-void opExitosa() {
+void opExitosa() 
+{
     // Implementar lógica para opción exitosa
+}
+
+void Radomizer()
+{
+  srand(time(NULL));
+  int i;
+  for( i= 0; i <= 16; i++)
+  {
+    numeroTarjeta [i] = rand()%10;
+  }
+  for (i= 0; i < 16; i++)
+  {
+    printf("%d",numeroTarjeta [i]);
+  }
+  
 }
