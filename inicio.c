@@ -1,9 +1,11 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include <string.h>
 
 void opcion();
 void registro();
 void opExitosa();
+void Transferencia();
 
 struct cliente
 {
