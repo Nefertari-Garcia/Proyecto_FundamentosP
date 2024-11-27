@@ -15,7 +15,7 @@ struct cliente
     int numeroTarjeta;
     char contrasenaNIP[4];
     float saldo;
-};
+}s[20];
 
 int main()
 {
