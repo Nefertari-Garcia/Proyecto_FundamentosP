@@ -34,6 +34,9 @@ void opcion(){
         case 1:
             registro();
             break;
+        case 4:
+            Transferencia();
+            break;
         
         default:
             printf("Ninguna de las opciones son validas\n");
@@ -65,4 +68,45 @@ void opExitosa(){
     system("pause");
     system("cls");
     opcion();
+}
+
+void Transferencia(){
+    int i, j, celltrans, nip, aux = 0;
+	float valor;
+	
+	system("cls");
+	printf("Ingrese Numero de Telefono:  ");
+	scanf("%i",&celltrans);
+	
+	printf("Ingrese su NIP: ");
+	scanf("%i",&nip);
+	
+	for(i = 0; i < 10; i++){
+		if(celltrans == s[i].numeroCelular && s[i].saldo > 0){
+			for(j = 0; j < 10; j++){
+				if(nip = .contrasenaNIP){
+					do{
+						printf("Ingrese valor a transferir: $");
+						scanf("%f",&valor);
+					}while(valor > s[i].saldo);
+					
+					s[i].saldo -= valor;
+					s[j].saldo += valor;
+					aux = 1;	
+				}	
+			}
+		}
+	}
+	
+	if (aux == 0){
+		printf("\nError al realizar transferencia.\n");
+		system("pause");
+		menu();
+	}
+	
+	else{
+		printf("\nTransferencia realizada con exito.\n");
+		system("pause");
+		menu();
+	}
 }
