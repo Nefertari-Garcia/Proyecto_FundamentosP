@@ -15,7 +15,7 @@ struct cliente
     int numeroTarjeta;
     char contrasenaNIP[4];
     float saldo;
-}s[20];
+}s[10];
 
 int main()
 {
@@ -71,7 +71,7 @@ void opExitosa(){
 }
 
 void Transferencia(){
-    int i, j, celltrans, nip, aux = 0;
+    int i, celltrans, nip, aux = 0;
 	float valor;
 	
 	system("cls");
@@ -82,31 +82,29 @@ void Transferencia(){
 	scanf("%i",&nip);
 	
 	for(i = 0; i < 10; i++){
-		if(celltrans == s[i].numeroCelular && s[i].saldo > 0){
-			for(j = 0; j < 10; j++){
-				if(nip = .contrasenaNIP){
-					do{
-						printf("Ingrese valor a transferir: $");
-						scanf("%f",&valor);
+		if(celltrans == s[i].numeroCelular && nip == s[i].contrasenaNIP){
+			do{
+			printf("Ingrese valor a transferir: $");
+			scanf("%f",&valor);
 					}while(valor > s[i].saldo);
-					
 					s[i].saldo -= valor;
-					s[j].saldo += valor;
 					aux = 1;	
-				}	
-			}
-		}
+				}
+			else{ 
+			printf("Datos ingresados incorrectos");
+			system("pause");
+			opcion();
 	}
-	
+}
 	if (aux == 0){
 		printf("\nError al realizar transferencia.\n");
 		system("pause");
-		menu();
+		opcion();
 	}
 	
 	else{
 		printf("\nTransferencia realizada con exito.\n");
 		system("pause");
-		menu();
+		opcion();
 	}
-}
+}    
